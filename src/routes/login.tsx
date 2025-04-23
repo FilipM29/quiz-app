@@ -9,12 +9,17 @@ import {
   Container,
   Stack
 } from '@mui/material';
+import { createFileRoute } from '@tanstack/react-router';
 import { useForm } from 'react-hook-form';
 import { TextField } from '../forms/components/TextField';
 import {
   LoginFormData,
   useLoginFormSchema
 } from '../forms/schemas/loginSchema';
+
+export const Route = createFileRoute('/login')({
+  component: Login
+});
 
 function Login() {
   const schema = useLoginFormSchema();

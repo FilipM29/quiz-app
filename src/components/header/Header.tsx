@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import { NavLink } from 'react-router';
+import QuizAppLink from '../QuizAppLink.tsx';
 
 export default function Header() {
   return (
@@ -42,9 +42,12 @@ export default function Header() {
               />
             </Box>
           </Box>
-          <NavLink to="/login">
+          <QuizAppLink to="/">
+            <Button color="inherit">Home</Button>
+          </QuizAppLink>
+          <QuizAppLink to="/login">
             <Button color="inherit">Login</Button>
-          </NavLink>
+          </QuizAppLink>
         </Toolbar>
       </AppBar>
     </Box>
@@ -60,14 +63,14 @@ const top100Films = [
   { title: 'The Godfather: Part II', year: 1974 },
   { title: 'The Dark Knight', year: 2008 },
   { title: '12 Angry Men', year: 1957 },
-  { title: "Schindler's List", year: 1993 },
-  { title: 'Pulp Fiction', year: 1994 },
+  { title: " Schindler's List", year: 1993 },
+  { title: ' Pulp Fiction', year: 1994 },
   {
-    title: 'The Lord of the Rings: The Return of the King',
+    title: ' The Lord of the Rings: The Return of the King',
     year: 2003
   },
   {
-    title: 'The Good, the Bad and the Ugly',
+    title: ' The Good, the Bad and the Ugly',
     year: 1966
   },
   { title: 'Fight Club', year: 1999 },
