@@ -1,10 +1,7 @@
-import { Controller } from "react-hook-form";
-import type {
-    ControllerProps,
-    FieldValues,
-  } from 'react-hook-form';
-  import type { InputHTMLAttributes, ReactNode } from 'react';
-import {TextField as TextInput} from "@mui/material";
+import { TextField as TextInput } from '@mui/material';
+import type { InputHTMLAttributes, ReactNode } from 'react';
+import type { ControllerProps, FieldValues } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 
 type ContainerProps<T extends FieldValues> = Pick<
   ControllerProps<T>,
@@ -25,16 +22,16 @@ export type TextFieldProps<T extends FieldValues> = ContainerProps<T> &
   FieldProps &
   ComponentProps;
 
-
-export function TextField<T extends FieldValues> ({ name, control, label }: TextFieldProps<T>){
+export function TextField<T extends FieldValues>({
+  name,
+  control,
+  label
+}: TextFieldProps<T>) {
   return (
     <Controller
       name={name}
       control={control}
-      render={({
-        field: { onChange, value },
-        fieldState: { error },
-      }) => (
+      render={({ field: { onChange, value }, fieldState: { error } }) => (
         <TextInput
           helperText={error ? error.message : null}
           size="small"
@@ -48,4 +45,4 @@ export function TextField<T extends FieldValues> ({ name, control, label }: Text
       )}
     />
   );
-};
+}

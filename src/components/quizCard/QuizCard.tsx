@@ -1,12 +1,11 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
-import { Quiz } from "../../models/quiz";
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Quiz } from '../../models/quiz';
 
 type Props = {
   quiz: Quiz;
@@ -21,7 +20,7 @@ export default function QuizCardCard({ quiz }: Props) {
           height="140"
           image={
             quiz.pictureUrl ??
-            "https://exoticdirect.co.uk/wp-content/uploads/2019/03/Bearded-Dragon-Info-Fact.png"
+            'https://exoticdirect.co.uk/wp-content/uploads/2019/03/Bearded-Dragon-Info-Fact.png'
           }
           alt="quiz image"
         />
@@ -29,7 +28,7 @@ export default function QuizCardCard({ quiz }: Props) {
           <Typography gutterBottom variant="h5" component="div">
             {quiz.title}
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             {quiz.description}
           </Typography>
         </CardContent>

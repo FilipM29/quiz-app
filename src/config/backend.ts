@@ -25,28 +25,28 @@ export type BackendConfig = {
   };
 };
 export const backendConfig: BackendConfig = {
-  apiHost: "http://localhost:8080/api",
+  apiHost: 'http://localhost:8080/api',
   apiUrl: {
     user: {
-      findAll: "/users",
+      findAll: '/users',
       findById: (id) => `/users/${id}`,
-      create: "/users",
+      create: '/users',
       update: (id) => `/users/${id}`,
-      delete: (id) => `/users/${id}`,
+      delete: (id) => `/users/${id}`
     },
     quiz: {
-      findAll: "/quiz",
+      findAll: '/quiz',
       findById: (id) => `/quiz/${id}`,
-      create: "/quiz",
+      create: '/quiz',
       update: (id) => `/quiz/${id}`,
-      delete: (id) => `/quiz/${id}`,
+      delete: (id) => `/quiz/${id}`
     },
     question: {
-      findAll: "/questions",
+      findAll: '/questions',
       findById: (id) => `/questions/${id}`,
-      create: "/questions",
+      create: '/questions',
       update: (id) => `/questions/${id}`,
-      delete: (id) => `/questions/${id}`,
-    },
-  },
+      delete: (id) => `/questions/${id}`
+    }
+  }
 };

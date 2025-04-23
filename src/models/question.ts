@@ -1,6 +1,6 @@
 export enum QuestionType {
-  EXACT = "EXACT",
-  OPTIONS = "OPTIONS",
+  EXACT = 'EXACT',
+  OPTIONS = 'OPTIONS'
 }
 
 export type Question = {

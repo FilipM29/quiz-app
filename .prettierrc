@@ -2,5 +2,12 @@
   "bracketSameLine": true,
   "singleQuote": true,
   "trailingComma": "none",
-  "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"]
+  "tabWidth": 2,
+  "printWidth": 80,
+  "useTabs": false,
+  "proseWrap": "always",
+  "plugins": [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss"
+  ]
 }

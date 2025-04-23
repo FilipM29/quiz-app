@@ -1,20 +1,20 @@
-import { Round } from "./round";
+import { Round } from './round';
 
 export enum QuizType {
-  SLIDES = "SLIDES",
-  JEOPARDY = "JEOPARDY",
+  SLIDES = 'SLIDES',
+  JEOPARDY = 'JEOPARDY'
 }
 
 export enum QuizStatus {
-  DRAFT = "DRAFT",
-  PUBLISHED = "PUBLISHED",
-  ARCHIVED = "ARCHIVED",
+  DRAFT = 'DRAFT',
+  PUBLISHED = 'PUBLISHED',
+  ARCHIVED = 'ARCHIVED'
 }
 
 export enum QuizVisibility {
-  PUBLIC = "PUBLIC",
-  PRIVATE = "PRIVATE",
-  UNLISTED = "UNLISTED",
+  PUBLIC = 'PUBLIC',
+  PRIVATE = 'PRIVATE',
+  UNLISTED = 'UNLISTED'
 }
 
 export type Quiz = {

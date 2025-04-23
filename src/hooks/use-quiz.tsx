@@ -1,10 +1,10 @@
-import { useAtom } from "jotai";
-import { quizState } from "../atoms";
-import { useContext, useEffect } from "react";
-import { ConfigContext } from "../context/config-context";
-import useSWRImmutable from "swr/immutable";
-import { Quiz } from "../models/quiz";
-import { fetcher } from "../utils/common";
+import { useAtom } from 'jotai';
+import { useContext, useEffect } from 'react';
+import useSWRImmutable from 'swr/immutable';
+import { quizState } from '../atoms';
+import { ConfigContext } from '../context/config-context';
+import { Quiz } from '../models/quiz';
+import { fetcher } from '../utils/common';
 
 export const useQuiz = () => {
   const [quizzes, setQuizzes] = useAtom(quizState);
