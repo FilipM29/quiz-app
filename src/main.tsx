@@ -4,13 +4,18 @@ import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import theme from "./theme";
-import App from "./App.tsx";
+import App from "./pages/App.tsx";
+import Login from "./pages/Login.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
   },
+  {
+    path: "/login",
+    element: <Login />,
+  }
 ]);
 
 createRoot(document.getElementById("root")!).render(

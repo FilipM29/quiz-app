@@ -5,8 +5,11 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Autocomplete, TextField } from "@mui/material";
+import { NavLink } from "react-router";
+
 
 export default function Header() {
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -42,7 +45,9 @@ export default function Header() {
               />
             </Box>
           </Box>
-          <Button color="inherit">Login</Button>
+          <NavLink to="/login">
+            <Button color="inherit">Login</Button>
+          </NavLink>
         </Toolbar>
       </AppBar>
     </Box>

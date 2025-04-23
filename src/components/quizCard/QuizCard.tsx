@@ -14,7 +14,7 @@ type Props = {
 
 export default function QuizCardCard({ quiz }: Props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} elevation={3}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -23,7 +23,7 @@ export default function QuizCardCard({ quiz }: Props) {
             quiz.pictureUrl ??
             "https://exoticdirect.co.uk/wp-content/uploads/2019/03/Bearded-Dragon-Info-Fact.png"
           }
-          alt="bearded dragon"
+          alt="quiz image"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

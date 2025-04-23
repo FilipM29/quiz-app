@@ -2,10 +2,10 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import Header from "./components/header/header";
+import Header from "../components/header/header";
 import { Grid } from "@mui/material";
-import QuizCard from "./components/quizCard/QuizCard";
-import { useQuiz } from "./hooks/use-quiz";
+import QuizCard from "../components/quizCard/QuizCard";
+import { useQuiz } from "../hooks/use-quiz";
 
 function Copyright() {
   return (
