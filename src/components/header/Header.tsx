@@ -5,9 +5,19 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
+import { useNavigate } from '@tanstack/react-router';
+import { useAuth } from '../../context/auth-context.tsx';
 import QuizAppLink from '../QuizAppLink.tsx';
 
 export default function Header() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const onLogout = async () => {
+    await logout();
+    await navigate({ to: '/login' });
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -42,12 +52,16 @@ export default function Header() {
               />
             </Box>
           </Box>
+          {user && user.email}
           <QuizAppLink to="/">
             <Button color="inherit">Home</Button>
           </QuizAppLink>
           <QuizAppLink to="/login">
             <Button color="inherit">Login</Button>
           </QuizAppLink>
+          <Button color="inherit" onClick={onLogout}>
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>

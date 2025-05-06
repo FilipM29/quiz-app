@@ -10,35 +10,32 @@ import {
   Stack,
   Typography
 } from '@mui/material';
-import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import { createFileRoute } from '@tanstack/react-router';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/auth-context.tsx';
-import { TextField } from '../forms/components/TextField';
+import { TextField } from '../forms/components/TextField.tsx';
 import {
   LoginFormData,
   useLoginFormSchema
-} from '../forms/schemas/loginSchema';
+} from '../forms/schemas/loginSchema.ts';
 
-export const Route = createFileRoute('/login')({
-  component: Login
+export const Route = createFileRoute('/register')({
+  component: RouteComponent
 });
 
-function Login() {
+function RouteComponent() {
   const schema = useLoginFormSchema();
   const { control, handleSubmit } = useForm<LoginFormData>({
     resolver: zodResolver(schema)
   });
-  const { loginWithEmailAndPassword, loginWithGoogle } = useAuth();
-  const navigate = useNavigate();
+  const { signupWithEmailAndPassword, loginWithGoogle } = useAuth();
 
   const onSubmit = async ({ email, password }: LoginFormData) => {
-    await loginWithEmailAndPassword(email, password);
-    await navigate({ to: '/' });
+    await signupWithEmailAndPassword(email, password);
   };
 
-  const onGoogleLogin = async () => {
+  const onGoogleRegister = async () => {
     await loginWithGoogle();
-    await navigate({ to: '/' });
   };
 
   return (
@@ -47,13 +44,13 @@ function Login() {
         elevation={1}
         sx={{ maxWidth: 345, margin: 'auto', marginTop: '150px' }}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <CardHeader title="Login" />
+          <CardHeader title="Register" />
           <CardContent>
             <Stack spacing={2}>
               <TextField name="email" label="Email" control={control} />
               <TextField name="password" label="Password" control={control} />
               <Button size="small" color="primary" type="submit">
-                Login
+                Register
               </Button>
             </Stack>
           </CardContent>
@@ -66,7 +63,7 @@ function Login() {
               sx={{ color: 'text.secondary', margin: 'auto' }}>
               Or continue with:
             </Typography>
-            <Button size="small" color="primary" onClick={onGoogleLogin}>
+            <Button size="small" color="primary" onClick={onGoogleRegister}>
               Google
             </Button>
           </Stack>
@@ -75,5 +72,3 @@ function Login() {
     </Container>
   );
 }
-
-export default Login;
