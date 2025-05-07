@@ -25,6 +25,7 @@ export type TextFieldProps<T extends FieldValues> = ContainerProps<T> &
 export function TextField<T extends FieldValues>({
   name,
   control,
+  type,  
   label
 }: TextFieldProps<T>) {
   return (
@@ -40,6 +41,7 @@ export function TextField<T extends FieldValues>({
           value={value}
           fullWidth
           label={label}
+          type={type}
           variant="outlined"
         />
       )}
