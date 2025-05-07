@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import GoogleIcon from '@mui/icons-material/Google';
 import {
   Box,
   Button,
@@ -41,6 +42,10 @@ function Login() {
     await navigate({ to: '/' });
   };
 
+  const onRegister = async () => {
+    await navigate({ to: '/register' });
+  };
+
   return (
     <Container>
       <Card
@@ -66,8 +71,20 @@ function Login() {
               sx={{ color: 'text.secondary', margin: 'auto' }}>
               Or continue with:
             </Typography>
-            <Button size="small" color="primary" onClick={onGoogleLogin}>
+            <Button
+              size="small"
+              color="primary"
+              onClick={onGoogleLogin}
+              startIcon={<GoogleIcon />}>
               Google
+            </Button>
+            <Typography
+              variant="body2"
+              sx={{ color: 'text.secondary', margin: 'auto' }}>
+              Don't have an account yet? Register here:
+            </Typography>
+            <Button size="small" color="primary" onClick={onRegister}>
+              Register
             </Button>
           </Stack>
         </Box>
