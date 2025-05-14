@@ -3,12 +3,19 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, redirect } from '@tanstack/react-router';
 import QuizCard from '../components/quizCard/QuizCard';
 import { useQuiz } from '../hooks/use-quiz';
 
 export const Route = createFileRoute('/')({
-  component: IndexComponent
+  component: IndexComponent,
+  beforeLoad: ({ context }) => {
+    if (!context.auth!.user) {
+      throw redirect({
+        to: '/login'
+      });
+    }
+  }
 });
 
 function Copyright() {
