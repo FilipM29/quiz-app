@@ -6,7 +6,7 @@ export enum QuizType {
 }
 
 export enum QuizStatus {
-  DRAFT = 'DRAFT',
+  CONCEPT = 'CONCEPT',
   PUBLISHED = 'PUBLISHED',
   ARCHIVED = 'ARCHIVED'
 }
@@ -17,18 +17,27 @@ export enum QuizVisibility {
   UNLISTED = 'UNLISTED'
 }
 
+export enum Difficulty {
+  EASY = 'EASY',
+  MEDIUM = 'MEDIUM',
+  HARD = 'HARD'
+}
+
 export type Quiz = {
   id: string;
   title: string;
-  pictureUrl: string;
+  pictureUrl?: string | null;
   description: string;
-  type: QuizType;
-  status: QuizStatus;
-  visibility: QuizVisibility;
+  category: string;
+  difficulty: Difficulty;
+  quizType: QuizType;
+  quizStatus: QuizStatus;
+  quizVisibility: QuizVisibility;
   createdAt: string;
   updatedAt: string;
-  createdBy: string;
+  authorId: string;
   numOfRounds: number;
-  numOfPlayes: number;
-  rounds: Round[];
+  numOfPlays: number;
+  rating: number;
+  rounds?: Round[];
 };
