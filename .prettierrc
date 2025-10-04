@@ -6,8 +6,5 @@
   "printWidth": 80,
   "useTabs": false,
   "proseWrap": "always",
-  "plugins": [
-    "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss"
-  ]
+  "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"]
 }
