@@ -16,6 +16,10 @@ type FieldProps = Omit<
 type ComponentProps = {
   label?: string;
   unit?: string | ReactNode;
+  helperText?: string;
+  type?: string;
+  multiline?: boolean;
+  rows?: number;
 };
 
 export type TextFieldProps<T extends FieldValues> = ContainerProps<T> &
@@ -25,7 +29,11 @@ export type TextFieldProps<T extends FieldValues> = ContainerProps<T> &
 export function TextField<T extends FieldValues>({
   name,
   control,
-  label
+  label,
+  helperText,
+  type = 'text',
+  multiline,
+  rows
 }: TextFieldProps<T>) {
   return (
     <Controller
@@ -33,7 +41,7 @@ export function TextField<T extends FieldValues>({
       control={control}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <TextInput
-          helperText={error ? error.message : null}
+          helperText={error ? error.message : helperText || null}
           size="small"
           error={!!error}
           onChange={onChange}
@@ -41,6 +49,9 @@ export function TextField<T extends FieldValues>({
           fullWidth
           label={label}
           variant="outlined"
+          type={type}
+          multiline={multiline}
+          rows={rows}
         />
       )}
     />

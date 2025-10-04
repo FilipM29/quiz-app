@@ -4,5 +4,5 @@ export type Round = {
   id: string;
   title: string;
   order: number;
-  questions: Question[];
+  questions?: Question[];
 };

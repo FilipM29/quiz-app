@@ -1,6 +1,7 @@
 export enum QuestionType {
   EXACT = 'EXACT',
-  OPTIONS = 'OPTIONS'
+  OPTIONS = 'OPTIONS',
+  INTERVAL = 'INTERVAL'
 }
 
 export type Question = {
@@ -10,8 +11,6 @@ export type Question = {
   text: string;
   options: string[];
   answer: string;
-  createdAt: string;
-  updatedAt: string;
   acceptableAnswers: string[];
   pictureUrl?: string;
 };
